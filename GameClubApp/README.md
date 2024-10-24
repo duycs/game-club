@@ -6,8 +6,8 @@
 - Default local environment in development
 
 ### Build
--```npm install```
--```ng build```
+- ```npm install```
+- ```ng build```
 
 ### Run
 - ```ng serve```
