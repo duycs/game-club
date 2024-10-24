@@ -1,6 +1,7 @@
 ## GAME CLUB API
 
 ### Environment
+- Require install .Net sdk 6.0
 - Default local environment in development
 - Can set a machine environment ```Env:ASPNETCORE_ENVIRONMENT = "Development"```
 

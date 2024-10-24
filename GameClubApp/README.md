@@ -1,8 +1,8 @@
 ## GAME CLUB APP
 
 ### Environments
-- node v18.15.0, avaliable with node version > 14
-- angular 17.3: ```npm install -g @angular/cli``
+- Install node v18.15.0, avaliable with node version > 14
+- Install angular 17.3: ```npm install -g @angular/cli``
 - Default local environment in development
 
 ### Build
@@ -11,4 +11,4 @@
 
 ### Run
 - ```ng serve```
-- The App in local development run at: ```https://localhost:4200/clubs```
+- The App in local development run at: ```https://localhost:4200```

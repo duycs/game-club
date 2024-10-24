@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "CrossCutting\CrossCutting.csproj", "{5C2E0B0F-94F7-4BFC-812D-05FF3AE30DAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CronJob", "CronJob\CronJob.csproj", "{198A99C8-5871-45F0-AFF9-C9CE33BF1185}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{BFF367D2-72F6-4B18-A5DB-A0B868E9C369}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{5C2E0B0F-94F7-4BFC-812D-05FF3AE30DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C2E0B0F-94F7-4BFC-812D-05FF3AE30DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C2E0B0F-94F7-4BFC-812D-05FF3AE30DAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{198A99C8-5871-45F0-AFF9-C9CE33BF1185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{198A99C8-5871-45F0-AFF9-C9CE33BF1185}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{198A99C8-5871-45F0-AFF9-C9CE33BF1185}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{198A99C8-5871-45F0-AFF9-C9CE33BF1185}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFF367D2-72F6-4B18-A5DB-A0B868E9C369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFF367D2-72F6-4B18-A5DB-A0B868E9C369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFF367D2-72F6-4B18-A5DB-A0B868E9C369}.Release|Any CPU.ActiveCfg = Release|Any CPU
