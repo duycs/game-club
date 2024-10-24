@@ -11,9 +11,7 @@ namespace Application.Queries
 
             // search by id
             if(id > 0){
-                Expression<Func<Club, bool>> criteria = c =>
-                    id.Equals(c.Id);
-
+                Expression<Func<Club, bool>> criteria = c => id.Equals(c.Id);
                 AddCriteria(criteria);
             }
 
@@ -22,7 +20,8 @@ namespace Application.Queries
             {
                 searchValue = searchValue.ToLower().Trim();
                 Expression<Func<Club, bool>> criteria = c =>
-                    searchValue.Contains(c.Name.ToLower() ?? "") || searchValue.Contains(c.Description.ToLower() ?? "");
+                    c.Name.ToLower().Trim().Contains(searchValue)
+                    || c.Description.ToLower().Trim().Contains(searchValue);
 
                 AddCriteria(criteria);
             }
@@ -31,7 +30,7 @@ namespace Application.Queries
             if(!string.IsNullOrEmpty(name)){
                 name = name.ToLower().Trim();
                 Expression<Func<Club, bool>> criteria = c =>
-                    name.Contains(c.Name.ToLower() ?? "");
+                    c.Name.ToLower().Trim().Contains(name);
 
                 AddCriteria(criteria);
             }
@@ -40,7 +39,7 @@ namespace Application.Queries
             if(!string.IsNullOrEmpty(description)){
                 description = description.ToLower().Trim();
                 Expression<Func<Club, bool>> criteria = c =>
-                    description.Contains(c.Description.ToLower() ?? "");
+                    c.Description.ToLower().Trim().Contains(description);
 
                 AddCriteria(criteria);
             }

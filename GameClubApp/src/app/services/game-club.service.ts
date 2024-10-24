@@ -42,7 +42,7 @@ export class GameClubService extends BaseService{
       params.id = queryParams.id;
     }
 
-    if(queryParams.searchValue){
+    if(queryParams.text){
       params.text = queryParams.text;
     }
 

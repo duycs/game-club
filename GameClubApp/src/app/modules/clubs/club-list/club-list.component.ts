@@ -50,7 +50,7 @@ export class ClubListComponent implements OnInit {
         },
         {
             id: "text",
-            name: "Text",
+            name: "Search full text",
             type: "text",
             select: "",
             values: "",
@@ -67,7 +67,7 @@ export class ClubListComponent implements OnInit {
 
     searchKeywords: any[] = [];
 
-    displayedColumns: string[] = ['id', 'name', 'description', 'action'];
+    displayedColumns: string[] = ['id', 'name', 'description', 'events', 'action'];
 
     dataSource!: ClubDataSource;
 

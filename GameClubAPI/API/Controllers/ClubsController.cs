@@ -86,11 +86,11 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult SearchClubs([FromQuery] int pageNumber = 0, [FromQuery] int pageSize = 0,
          [FromQuery] int id = 0, [FromQuery] string? name = "", [FromQuery] string? description = "",
-         [FromQuery] string? searchValue = "")
+         [FromQuery] string? text = "")
         {
             // pageNumber = 0 then return all
             var clubs = _gameClubService.SearchClubs(pageNumber, pageSize,
-                id, name, description, searchValue, out int totalRecords);
+                id, name, description, text, out int totalRecords);
 
             return Ok(clubs);
         }
