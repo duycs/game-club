@@ -14,7 +14,7 @@
 
 ### Run
 - Goto API folder to run: ```dotnet run```
-- The API in local development run at: ```https://localhost:7227```
+- The API in local development run at: [https://localhost:7227]https://localhost:7227
 
 #### Migrations CLI
 - Go to Infrastructure folder to create new migration(or remove):
