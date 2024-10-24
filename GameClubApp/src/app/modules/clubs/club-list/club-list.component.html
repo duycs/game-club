@@ -81,9 +81,9 @@
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
-                    <mat-paginator [length]="this.dataSource.count" [pageIndex]="0" [pageSize]="10"
+                    <!-- <mat-paginator [length]="this.dataSource.count" [pageIndex]="0" [pageSize]="10"
                         [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons (page)="handlePageEvent($event)">
-                    </mat-paginator>
+                    </mat-paginator> -->
                 </div>
             </div>
 

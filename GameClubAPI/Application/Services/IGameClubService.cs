@@ -7,11 +7,9 @@ namespace Application.Services
     {
         Club CreateClub(CreateClubVM request);
         Club? GetClub(int id);
-        Club GetClubByName(string name);
         IEnumerable<Club> GetClubs();
         IEnumerable<Club> SearchClubs(int pageNumber, int pageSize, int id, string name, string description, string text, out int totalRecords);
         Event CreateClubEvent(int clubId, CreateClubEventVM request);
         IEnumerable<Event> GetClubEvents(int clubId);
-        Event? GetClubEventByTitle(int clubId, string title);
     }       
 }

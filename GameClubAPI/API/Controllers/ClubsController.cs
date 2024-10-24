@@ -2,6 +2,7 @@ using Application.Models;
 using Application.Services;
 using Domain.Clubs;
 using Infrastructure.Pagging;
+using Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,22 +51,26 @@ namespace API.Controllers
         /// </returns>
         //[Authorize]
         [HttpPost]
-        public IActionResult CreateClub([FromBody]CreateClubVM request)
+        public IActionResult CreateClub([FromBody] CreateClubVM request)
         {
             if (!ModelState.IsValid) return BadRequest(new { Errors = ModelState });
 
-            var existClub = _gameClubService.GetClubByName(request.Name);
+            try
+            {
+                var club = _gameClubService.CreateClub(request);
+                var location = Url.Action(nameof(CreateClub), new { id = club.Id }) ?? $"/{club.Id}";
 
-            if (existClub != null)
+                return Created(location, club);
+
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound();
+            }
+            catch (ConflictException ex2)
             {
                 return Conflict();
             }
-
-            var club = _gameClubService.CreateClub(request);
-
-            var location = Url.Action(nameof(CreateClub), new { id = club.Id }) ?? $"/{club.Id}";
-
-            return Created(location, club);
         }
 
         /// <summary>
@@ -105,24 +110,29 @@ namespace API.Controllers
         /// 2. Return 409 status: Conflict if same club and title
         /// 3. Return 500 status: Require title or other internal error
         /// 4. Return 201 status: Return event have been created
+        /// 5. Return 404 status: If not exist id
         /// </returns>
         //[Authorize]
         [HttpPost("{id}/events")]
-        public IActionResult CreateClubEvent(int id, [FromBody]CreateClubEventVM request)
+        public IActionResult CreateClubEvent(int id, [FromBody] CreateClubEventVM request)
         {
             if (!ModelState.IsValid) return BadRequest(new { Errors = ModelState });
 
-            var existClubEvent = _gameClubService.GetClubEventByTitle(id, request.Title);
-            if (existClubEvent != null)
+            try
+            {
+                var clubEvent = _gameClubService.CreateClubEvent(id, request);
+                var location = Url.Action(nameof(CreateClub), new { id = clubEvent.Id }) ?? $"{id}/events/{clubEvent.Id}";
+
+                return Created(location, clubEvent);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound();
+            }
+            catch (ConflictException ex2)
             {
                 return Conflict();
             }
-
-            var clubEvent = _gameClubService.CreateClubEvent(id, request);
-
-            var location = Url.Action(nameof(CreateClub), new { id = clubEvent.Id }) ?? $"{id}/events/{clubEvent.Id}";
-
-            return Created(location, clubEvent);
         }
 
         /// <summary>
@@ -132,13 +142,21 @@ namespace API.Controllers
         /// <returns>
         /// 1. Return 500 status: If have internal error
         /// 2. Return 200 status: Return result or empty list
+        /// 3. Return 404 status: If not exist id
         /// </returns>
         //[Authorize]
         [HttpGet("{id}/events")]
         public IActionResult GetClubEvents(int id)
         {
-            var clubEvents = _gameClubService.GetClubEvents(id);
-            return Ok(clubEvents);
+            try
+            {
+                var clubEvents = _gameClubService.GetClubEvents(id);
+                return Ok(clubEvents);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
     }

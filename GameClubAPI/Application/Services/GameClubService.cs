@@ -22,6 +22,10 @@ namespace Application.Services
 
         public Club CreateClub(CreateClubVM request)
         {
+            var existClub = GetClubByName(request.Name);
+
+            if (existClub != null) throw new ConflictException();
+
             var club = _repositoryService.Add(Club.Create(request.Name, request.Description));
             _repositoryService.SaveChanges();
 
@@ -52,8 +56,17 @@ namespace Application.Services
 
         public Event CreateClubEvent(int clubId, CreateClubEventVM request)
         {
+            var club = GetClub(clubId);
+
+            if (club == null) throw new NotFoundException("Club does not existing");
+
+            var existClubEvent = GetClubEventByTitle(clubId, request.Title);
+
+            if (existClubEvent != null) throw new ConflictException();
+
             var clubEvent = _repositoryService.Add(Event.Create(clubId, request.Title, request.Description, request.Scheduled));
             _repositoryService.SaveChanges();
+
             return clubEvent;
         }
 

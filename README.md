@@ -11,7 +11,7 @@ Here are some demo screens:
 - List all of Clubs
 ![](https://lh3.googleusercontent.com/pw/AP1GczOjauSruAEN9HF0GTHICFJmBqmP8mFSSyHl9mUHAQ4qAYqcBNUAId0hpIFsa1adWlGQY96X6iUB1rAvzlrqVD-deCwlq9In0KEsu2oJajJr-go7YFPkTk7UEjieOvk4Szi5ofDZxWr5JzrSWVQc3Ld15g=w2830-h1840-s-no-gm?authuser=0)
 
-- List of Clubs with dropdown search
+- List of Clubs with dropdown search(please click to choose search by key column, enter value then press search bar icon)
 ![](https://lh3.googleusercontent.com/pw/AP1GczOnUd89njM-pZ2FxPxkByYkpICNTWjMq0APYszzo8uh3D5zB_8dQaJhtHKQg1atThjFcWdAz2BWJtuFrHZkauqSqQPJGGpUsFMuWsw6snBeVp0r65muUN-oFqXMo9YBZDTsPM6Q3WMOZ5U8x7xVMdWFIA=w2298-h1494-s-no-gm?authuser=0)
 
 - Add new Club

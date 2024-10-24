@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Exceptions
 {
-    public class DuplicateException : Exception
+    public class ConflictException : Exception
     {
-        public DuplicateException()
+        public ConflictException()
         {
         }
 
-        public DuplicateException(string message) : base(message)
+        public ConflictException(string message) : base(message)
         {
         }
     }
