@@ -1,5 +1,12 @@
 ## GAME CLUB API
 
+### Architecture
+- Some of concept in Clean architecture
+- Domain driven design
+- Code first with migration database
+- Query by specification
+- RESTFul API
+
 ### Environment
 - Require install .Net sdk 6.0.425
 - Default local environment in Development
