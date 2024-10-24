@@ -18,4 +18,4 @@
 
 ### Run
 - ```ng serve```
-- The App in local development run at: [https://localhost:4200]https://localhost:4200
+- The App in local development run at: <https://localhost:4200>
