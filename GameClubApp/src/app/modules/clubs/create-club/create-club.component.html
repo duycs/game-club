@@ -1,0 +1,35 @@
+<div fxFlex class="fxClass-all" ngClass.xs="fxClass-xs" [formGroup]="form">
+    <div class="header-button-row">
+        <app-back-button [title]="'Create new Club'"></app-back-button>
+
+        <div class="action">
+            <button class="right-button" mat-raised-button color="primary" (click)="save()">
+                <mat-icon>save</mat-icon>
+                <span>Save</span>
+            </button>
+        </div>
+    </div>
+
+    <mat-card class="full-width">
+        <mat-card-content>
+            <div class="container no-margin full-width">
+                <div class="row">
+                    <div class="col-8">
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="" formControlName="name">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Description</mat-label>
+                            <input matInput placeholder="" formControlName="description">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,23 @@
+<mat-toolbar class="mat-elevation-z6" color="primary" style="padding-left: 0px; position: fixed; top: 0; left: 0; right: 0; z-index: 100;">
+  <div fxHide.gt-xs>
+    <!-- <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+  </div>
+
+  <div class="menu right-menu" fxLayout="row" fxLayoutAlign="start center" fxHide.xs>
+    <ul style="float: left" fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li style="margin-top: 0">
+        <a routerLink="/">
+          <div class="logo">
+            <img style="height: 40px; margin-top: 6px;" src="./assets/images/logo.png">
+            <div style="float: right; padding-top: 10px;">
+              <span class="" style="color: black; margin-left: 25px;">GAME CLUB</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</mat-toolbar>
