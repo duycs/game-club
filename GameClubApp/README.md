@@ -1,9 +1,9 @@
 ## GAME CLUB APP
 
 ### Environments
-- Install node v18.15.0, avaliable with node version > 14
-- Install angular 17.3: ```npm install -g @angular/cli```
-- Default local environment in development
+- Install latest Node version, suggest Node version > v18.15.0
+- Install latest Angular CLI version: ```npm install -g @angular/cli```
+- Default local environment in Development
 
 ### Build
 - ```npm install```
